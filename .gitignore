@@ -1,0 +1,14 @@
+# folder 
+
+/dist
+/node_modules
+
+# env 
+.env
+.venv
+env
+
+# key 
+
+cert.pem
+key.pem
