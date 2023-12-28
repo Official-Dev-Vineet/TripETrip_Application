@@ -26,7 +26,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // enable cors
-app.use(cors());
+app.use(cors(
+  {
+    origin: "http://localhost:3000",
+    credentials: true
+  }
+));
 
 // connect to mongodb
 const uri = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@tripetrip.khj9rzw.mongodb.net/?retryWrites=true&w=majority`;
@@ -49,6 +54,7 @@ app.get("/", (req, res) => {
       "We are contemporary travel solution company which provides all types of tour and travel booking services in sectors like Hospitality, Commute & Food Industry.",
     contactViaEmail: "viratsinghkaharwar8923@gmail.com",
     contactViaPhone: "true",
+    serverURL:server.address().address
   });
 });
 
